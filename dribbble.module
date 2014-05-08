@@ -1,0 +1,44 @@
+<?php
+/**
+ *  @file
+ *  Standard Drupal hook implementations in support of Dribbble module.
+ */
+
+/**
+ *  Implements hook_menu().
+ */
+function dribbble_menu() {
+
+  $items = array();
+
+  $items['admin/config/media/dribbble'] = array(
+    'file' => 'inc/dribbble.admin.inc',
+    'title' => 'Dribbble',
+    'description' => 'Configure Dribbble module settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('dribbble_admin'),
+    'access arguments' => array('administer dribbble'),
+    'type' => MENU_NORMAL_ITEM
+  );
+
+  return $items;
+
+}
+
+/**
+ *  Implements hook_permission().
+ */
+function dribbble_permission() {
+
+  return array(
+    'administer dribbble' => array(
+      'title' => t('Administer Dribbble settings'),
+      'description' => t('@todo')
+    ),
+    'view dribbble' => array(
+      'title' => t('View Dribbble content'),
+      'description' => t('@todo')
+    )
+  );
+
+}

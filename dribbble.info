@@ -1,0 +1,5 @@
+name = Dribbble
+description = @todo
+core = 7.x
+files[] = example.test
+configure = admin/config/media/dribbble
