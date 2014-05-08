@@ -50,15 +50,10 @@ class Dribbble {
 
     if (gettype($params) === 'array' && !empty($params)) {
 
-      $i = 0;
-
       foreach ($params as $k => $v) {
-        if ($i !== 0) {
-          $data .= '&';
-        }
-        $data .= $k . '=' . $v;
-        $i++;
+        $data .= $k . '=' . $v . '&';
       }
+      $data = rtrim($data, '&');
 
     }
 
@@ -71,7 +66,7 @@ class Dribbble {
 
     $response = drupal_http_request($url, $options);
 
-    dsm($response); dsm(json_decode($response->data));
+    // dsm($response); dsm(json_decode($response->data));
 
     switch ($response->code) {
 
