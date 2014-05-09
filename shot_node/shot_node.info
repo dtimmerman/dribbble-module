@@ -1,0 +1,6 @@
+name = Dribbble: Shot Node
+description = @todo
+core = 7.x
+package = Dribbble
+configure = admin/config/media/dribbble/shot-node
+dependencies[] = dribbble
